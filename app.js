@@ -13,21 +13,16 @@
       // - with a border around it
       // - with a check button
       // - with a delete button
-      $("ul").append("<li>" + userItem + "</li>");
+      $('ul').append('<li>' + '<span class="shopping-item">' + userItem + '</span><div class="shopping-item-controls"><button class="shopping-item-toggle"><span class="button-label">' + 'check' + '</span></button><button class="shopping-item-delete"><span class="button-label">' + 'delete' + '</span></button></div></li>').addClass('shopping-item shopping-item-toggle shopping-item-delete');
       event.preventDefault();
-      $(userItem).addClass('shopping-item-toggle', 'shopping-item-delete');
-
   });
-
-
-
 
 // Second Event:
   // User clicks the check button:
     // If item is currently unchecked, "check" the item.
     // If item is currently checked, "un-check" the item.
   $('ul').on('click', 'li', function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     $(this).toggleClass('shopping-list__unchecked');
   });
 
